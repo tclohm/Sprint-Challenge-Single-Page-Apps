@@ -11,6 +11,8 @@ export default function SearchForm({characters}) {
   const handleChange = (event) => {
     setSearchResults(event.target.value)
   }
+
+
   // search
   useEffect(() => {
     const results = characters.filter( char => {
@@ -24,15 +26,16 @@ export default function SearchForm({characters}) {
 	  	<input
 	     	type="text"
 	     	placeholder="Search"
-	     	defaultValue={searchTerm}
+	     	value={searchTerm}
 	     	onChange={handleChange}
 	    ></input>
-    	
-       {characters.map( (name, index) => (
-	        <ul key={index}>
-	          <li>{name}</li>
-	        </ul>
-      	))}
     </section>
   );
 }
+
+
+       // {characters.map( (name, index) => (
+	      //   <ul key={index}>
+	      //     <li>{name}</li>
+	      //   </ul>
+      	// ))}

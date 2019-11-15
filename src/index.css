@@ -38,13 +38,13 @@ header h1 {
   text-align: center;
 }
 
-.centered {
-  position: center;
-}
-
-.button-links {
+.center {
   display: flex;
   justify-content: center;
+}
+
+.col {
+  flex-direction: column;
 }
 
 .link-space-right{

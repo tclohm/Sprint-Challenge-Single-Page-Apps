@@ -1,4 +1,7 @@
 import React from "react";
+import { Link, Route, BrowserRouter as Router } from "react-router-dom";
+
+import CharacterList from "./CharacterList";
 
 export default function WelcomePage() {
   return (

@@ -37,3 +37,20 @@ main {
 header h1 {
   text-align: center;
 }
+
+.centered {
+  position: center;
+}
+
+.button-links {
+  display: flex;
+  justify-content: center;
+}
+
+.link-space-right{
+  margin: 0 1rem 0 0;
+}
+
+.link-space-left {
+  margin: 0 0 0 1rem;
+}

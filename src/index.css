@@ -5,13 +5,11 @@ body {
 }
 
 main {
-  width: 85vw;
-  min-height: 80vh;
-  max-width: 1024px;
-  margin: 35px auto;
+  width: 100vw;
+  min-height: 100vh;
   background: #fff;
-  padding: 15px;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  background: url("./rickandmorty.jpg") 50% 40%;
+  /*box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);*/
 }
 
 .grid-view {
@@ -27,20 +25,17 @@ main {
 .grid-view div.card.ui {
   margin: 1.25rem;
 }
-/*
-.main-img {
-  display: block;
-  border-radius: 100%;
-  margin: 0 auto;
-} */
 
-header h1 {
-  text-align: center;
+.navigation-top {
+  display: flex;
+  justify-content: right;
 }
 
-.center {
+
+.right {
   display: flex;
-  justify-content: center;
+  justify-content: right;
+  margin: 0 1rem 0 0;
 }
 
 .col {
@@ -53,4 +48,43 @@ header h1 {
 
 .link-space-left {
   margin: 0 0 0 1rem;
+}
+
+.list-and-search {
+  display: flex;
+  flex-direction: row;
+}
+
+.list {
+  display: flex;
+  width: 70%;
+}
+
+.character-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  width: 100%;
+}
+
+.card-w-h {
+  width: 12rem;
+  height: 12rem;
+  opacity: 0.9;
+}
+
+.search-container {
+  display: flex;
+  justify-content: right;
+  margin: 0 1rem 0 0;
+  width: 30%;
+}
+
+.search-bar {
+  width: 14rem;
+  height: 2rem;
+  border-radius: 0.8rem;
+  border: 4px solid transparent;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  text-indent: 0.5rem;
 }

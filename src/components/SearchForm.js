@@ -1,41 +1,63 @@
 import React, { useState, useEffect } from "react";
+import CharacterCard from "./CharacterCard";
 
-export default function SearchForm({characters}) {
+export default function SearchForm(props) {
 
-	console.log(characters);
-
+	const { names, characters } = props
 	// search
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
+  const [results, setResults] = useState([]);
+
     // search
   const handleChange = (event) => {
-    setSearchResults(event.target.value)
+    event.preventDefault();
+    setSearchTerm(event.target.value)
   }
 
+  console.log("results:", results)
 
-  // search
   useEffect(() => {
-    const results = characters.filter( char => {
-      return char.toLowerCase().includes(searchTerm.toLowerCase())
+
+    let result = characters.filter( (person, index) => {
+              return person.name.toLowerCase().includes(searchTerm.toLowerCase())
     });
-    setSearchResults(results);
-  }, [searchTerm])
+    setResults(result);
+
+  }, [searchTerm]);
  
   return (
-    <section className="search-form">
-	  	<input
-	     	type="text"
-	     	placeholder="Search"
-	     	value={searchTerm}
-	     	onChange={handleChange}
-	    ></input>
-    </section>
+    <div className="list-and-search">
+      <div className="list">
+        <div className="character-list">
+          {
+            (searchTerm.length !== 0) ? 
+              results.map( (person, index) => 
+              <div>
+                <CharacterCard person={person}/>
+              </div> 
+            )
+
+            : 
+
+            characters.map( (person, index) => 
+              <div>
+                <CharacterCard person={person}/>
+              </div> 
+            )
+          }
+        </div>
+      </div>
+      <div className="search-container">
+        <label>
+  	  	<input
+          className="search-bar"
+  	     	type="text"
+  	     	placeholder="search"
+          defaultValue={searchTerm}
+  	     	onChange={handleChange}
+  	    ></input>
+        </label>
+      </div>
+    </div>
   );
 }
-
-
-       // {characters.map( (name, index) => (
-	      //   <ul key={index}>
-	      //     <li>{name}</li>
-	      //   </ul>
-      	// ))}

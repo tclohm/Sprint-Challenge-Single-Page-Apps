@@ -3,7 +3,7 @@ import CharacterCard from "./CharacterCard";
 
 export default function SearchForm(props) {
 
-	const { names, characters } = props
+	const { characters } = props
 	// search
   const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState([]);

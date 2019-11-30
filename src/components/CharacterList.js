@@ -6,7 +6,6 @@ import SearchForm from "./SearchForm";
 
 export default function CharacterList() {
   // big character list
-  const [names, setNames] = useState([]);
   const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
@@ -22,16 +21,11 @@ export default function CharacterList() {
               obj["gender"] = object.gender;
               obj["origin"] = object.origin;
               obj["status"] = object.status;
+              obj["image"] = object.image;
               return obj;
             });
-            console.log(charDetails);
             setCharacters(charDetails);
 
-            // names for search
-            let names = arrayOfObjects.map( (object) => {
-              return object.name
-            })
-            setNames(names);
           })
           .catch(error => {
             console.log("Error", error);
@@ -42,7 +36,7 @@ export default function CharacterList() {
 
   return (
       <section>
-        <SearchForm names={names} characters={characters} />
+        <SearchForm characters={characters} />
       </section>
   );
 }
